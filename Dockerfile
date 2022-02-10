@@ -8,7 +8,9 @@ ENV APP_DIR /home/$APP_NAME
 # 每个模块的target的bin资源
 # COPY ./alert-app-adapter/target/bin $APP_DIR/bin
 # COPY ./alert-app-adapter/target/lib $APP_DIR/lib
-RUN ./install.sh
+COPY ./self-hosted $APP_DIR/
+
+RUN $APP_DIR/install.sh
 
 # 指定工作目录
 WORKDIR $APP_DIR

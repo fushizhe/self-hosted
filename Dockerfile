@@ -10,7 +10,7 @@ RUN apk add --no-cache --virtual \
 # 复制文件夹
 COPY ./self-hosted $APP_DIR/
 RUN chmod +x $APP_DIR/install.sh
-RUN $APP_DIR/install.sh
+RUN /bin/sh $APP_DIR/install.sh
 
 # 指定工作目录
 WORKDIR $APP_DIR

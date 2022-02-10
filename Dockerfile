@@ -12,7 +12,7 @@ COPY ./self-hosted $APP_DIR/
 # RUN /bin/sh $APP_DIR/install.sh
 
 # 指定工作目录
-WORKDIR $APP_DIR
+WORKDIR $APP_DIR/self-hosted
 RUN chmod 755 install.sh
 RUN install.sh
 

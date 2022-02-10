@@ -4,8 +4,7 @@ FROM tmaier/docker-compose:latest
 ENV APP_NAME self-hosted
 ENV APP_DIR /home/$APP_NAME
 
-RUN apk add --no-cache --virtual \
-  bash
+RUN apk add --no-cache bash
 
 # 复制文件夹
 COPY ./self-hosted $APP_DIR/

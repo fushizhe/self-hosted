@@ -9,11 +9,12 @@ RUN apk add --no-cache --virtual \
 
 # 复制文件夹
 COPY ./self-hosted $APP_DIR/
-RUN chmod +x $APP_DIR/install.sh
-RUN /bin/sh $APP_DIR/install.sh
+# RUN chmod +x $APP_DIR/install.sh
+# RUN /bin/sh $APP_DIR/install.sh
 
 # 指定工作目录
 WORKDIR $APP_DIR
+RUN chmod 755 $APP_DIR/install.sh
 
 # 指定容器启动程序及参数
-#ENTRYPOINT ["bash","./startup.sh"]
+ENTRYPOINT ["bash","./install.sh"]

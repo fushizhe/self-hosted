@@ -15,6 +15,7 @@ COPY ./self-hosted $APP_DIR/
 # 指定工作目录
 WORKDIR $APP_DIR
 RUN chmod 755 $APP_DIR/install.sh
+RUN $APP_DIR/install.sh
 
 # 指定容器启动程序及参数
-ENTRYPOINT ["bash","./install.sh"]
+# ENTRYPOINT ["bash","./install.sh"]
